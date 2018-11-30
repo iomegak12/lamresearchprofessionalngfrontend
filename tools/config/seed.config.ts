@@ -59,6 +59,9 @@ export const SME_OUTPUT_FORMATS: SourceMapExplorerOutputFormat = {
  * - Utilities
  */
 export class SeedConfig {
+
+  BASE_CUSTOMER_SERVICE_URL = 'http://ramthinkpad:6767';
+
   /**
    * The port where the application will run.
    * The default port is `5555`, which can be overriden by the  `--port` flag when running `npm start`.
