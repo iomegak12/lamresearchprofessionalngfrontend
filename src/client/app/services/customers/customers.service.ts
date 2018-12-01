@@ -17,15 +17,21 @@ class CustomerService implements ICustomerService {
             throw new Error(INVALID_SERVICE_URL);
         }
 
-        this.customerServiceUrl = `${serviceBaseUrl}/api/customers`;
-    }
-
-    getCustomers(): Observable<Customer[]> {
         if (this.httpService === null) {
             throw new Error(INVALID_HTTP_CLIENT);
         }
 
+        this.customerServiceUrl = `${serviceBaseUrl}/api/customers`;
+    }
+
+    getCustomers(): Observable<Customer[]> {
         let result = this.httpService.get<Customer[]>(this.customerServiceUrl);
+
+        return result;
+    }
+
+    saveCustomerRecord(customerRecord: Customer): Observable<boolean> {
+        let result = this.httpService.post<boolean>(this.customerServiceUrl, customerRecord);
 
         return result;
     }

@@ -61,6 +61,8 @@ export const SME_OUTPUT_FORMATS: SourceMapExplorerOutputFormat = {
 export class SeedConfig {
 
   BASE_CUSTOMER_SERVICE_URL = 'http://ramthinkpad:6767';
+  NOTIFICATION_SERVICE_URL = 'http://ramthinkpad:6767';
+  AUTH_SERVICE_URL = 'http://ramthinkpad:6767/authenticate';
 
   /**
    * The port where the application will run.

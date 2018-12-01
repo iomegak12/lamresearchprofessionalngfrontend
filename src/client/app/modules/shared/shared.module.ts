@@ -14,11 +14,14 @@ import { ReasonsComponent } from "../../components/reasons/reasons.component";
 import { AboutUsComponent } from "../../components/aboutus/aboutus.component";
 import { VacanciesComponent } from "../../components/vacancies/vacancies.component";
 import { sharedRouteDefinitions } from "../../routing/shared/shared.routes";
-import { SigninComponent } from "../../components/signin/signin.component";
+import { SecurityModule } from "../security/security.module";
+import { CommonModule } from "@angular/common";
 
 const MODULE_DEF: any = {
     imports: [
-        sharedRouteDefinitions
+        CommonModule,
+        sharedRouteDefinitions,
+        SecurityModule
     ],
     declarations: [
         HeaderComponent, NavigationComponent, FooterComponent,
@@ -26,8 +29,7 @@ const MODULE_DEF: any = {
         CompactContactComponent, MissionComponent, SocialComponent,
         LayoutComponent,
         HomeComponent, FaqComponent, ReasonsComponent,
-        AboutUsComponent, VacanciesComponent,
-        SigninComponent
+        AboutUsComponent, VacanciesComponent
     ],
     exports: [
         LayoutComponent

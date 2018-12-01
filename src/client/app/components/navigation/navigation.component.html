@@ -12,11 +12,24 @@
         </ul>
     </li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a routerLink='/crm-system'>Customers</a></li>
 
-    <li>
+    <li *ngIf='loginStatus'>
+        <a routerLink='/crm-system'>Customers</a>
+    </li>
+
+    <li *ngIf='loginStatus'>
+            <a routerLink='/new-customer'>New Customer</a>
+        </li>
+
+    <li *ngIf='!loginStatus'>
         <a class="btn" routerLink='sign-in'>
             SIGN IN / SIGN UP
+        </a>
+    </li>
+
+    <li *ngIf='loginStatus' class='white-text'>
+        <a class="btn" (click)='logout()'>
+            Welcome {{ userName }}, Signout
         </a>
     </li>
 </ul>

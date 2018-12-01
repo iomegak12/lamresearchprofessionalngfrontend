@@ -1,1 +1,25 @@
-Total no. of Customer Records:  {{ customers.length }}
+<header id="head" class="secondary"></header>
+
+<!-- container -->
+<div class="container">
+
+    <ol class="breadcrumb">
+        <li><a href="index.html">Home</a></li>
+        <li class="active">About</li>
+    </ol>
+
+    <br />
+
+    <div class='row'>
+        <div class='col-md-6'>
+            <crmsystem-searchpanel #searchPanel></crmsystem-searchpanel>
+        </div>
+    </div>
+
+    <div class="row">
+        <div *ngFor="let customer of customers | where: 'customerName' : searchPanel.searchString"
+            class='col-md-3'>
+            <crmsystem-customerviewer [customerInfo]='customer'></crmsystem-customerviewer>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-4">
+        <img src="{{ customerDetail.customerId | photourl }}" title="Photo of Customer {{ customerDetail.customerName }}"
+            alt="Customer Photo" class="img img-responsive img-rounded" />
+    </div>
+
+    <div class="col-md-8">
+        <table class="table table-responsive table-condensed table-hover">
+            <thead>
+                <tr>
+                    <th>Property Name</th>
+                    <th>Property Value</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Profile Id:</td>
+                    <td> {{ customerDetail.customerId }} </td>
+                </tr>
+
+                <tr>
+                    <td>Contact Name:</td>
+                    <td> {{ customerDetail.customerName }} </td>
+                </tr>
+
+                <tr>
+                    <td>Address:</td>
+                    <td> {{ customerDetail.address }} </td>
+                </tr>
+
+                <tr>
+                    <td>Credit Limit:</td>
+                    <td> {{ customerDetail.credit | currency: '₹' }} </td>
+                </tr>
+
+                <tr>
+                    <td>Email:</td>
+                    <td> {{ customerDetail.email }} </td>
+                </tr>
+
+                <tr>
+                    <td>Phone:</td>
+                    <td> {{ customerDetail.phone }} </td>
+                </tr>
+
+                <tr>
+                    <td>Active Status:</td>
+                    <td> {{ customerDetail.status | symbol }} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        Customer Remarks:
+
+        <br />
+
+        <p class="text-left">
+            {{ customerDetail.remarks }}
+        </p>
+    </div>
+</div>
